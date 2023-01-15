@@ -1,0 +1,6 @@
+\documentclass[pdf] {beamer}
+\mode<presentation>{}
+%% preamble
+\title{Bash Scripting}
+\author{Assel Mukhamedyarova}
+\begin{document}
