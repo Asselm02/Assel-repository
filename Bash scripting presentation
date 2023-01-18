@@ -1,19 +1,103 @@
-\documentclass[pdf] {beamer}
-\mode<presentation>{}
-%% preamble
-\title{Bash Scripting}
+\documentclass[11pt, aspectratio=169]{beamer}
+\usetheme{Copenhagen}
+\usecolortheme{wolverine}
+\setbeamercovered{transparent}
+\usepackage[utf8]{inputenc}
+
+\title{Bash scripting}
 \author{Assel Mukhamedyarova}
+\date{January 2023}
+
 \begin{document}
-\begin{itemize} 
-\item
+
+\maketitle
+
+\begin{frame}{Table of contents}
+    
 
 
-%% title frame
-\begin{frame}
-\titlepage
+\begin{itemize}
+    \item<1-> What is a bash shell? 
+    \item<2->What is a bash script and how do you identify it?
+    \item<3->How to create your first bash script and execute it.
+    \item<4->The basic syntax of shell scripting.
+   \end{itemize}
+    
 \end{frame}
-%% normal frame
-\begin{frame}{Frame title}
-The body of the frame.
+\begin{frame}{What is a bash shell?}
+A bash script is a series of commands written in a file. These are read and executed by the bash program. The program executes line by line.
+
+For example, you can navigate to a certain path, create a folder and spawn a process inside it using the command line.
+
+You can do the same sequence of steps by saving the commands in a bash script and running it. You can run the script any number of times.
+    
 \end{frame}
+\begin{frame}{What is a bash script and how do you identify it?}
+File extension of .sh.
+By naming conventions, bash scripts end with a .sh. However, bash scripts can run perfectly fine without the sh extension.
+
+Scripts start with a bash bang.
+Scripts are also identified with a shebang. Shebang is a combination of bash # and bang !  followed the the bash shell path. This is the first line of the script. Shebang tells the shell to execute it via bash shell. Shebang is simply an absolute path to the bash interpreter.
+
+Below is an example of the shebang statement.
+
+#! /bin/bash
+
+The path of the bash program can vary. We will see later how to identify it.
+
+Execution rights:
+Scripts have execution rights for the user executing them.
+
+An execution right is represented by x. In the example below, my user has the rwx (read, write, execute) rights for the file test_script.sh
+
+
+File colour:
+Executable scripts appear in a different colour from rest of the files and folders.
+\end{frame}
+
+\begin{frame}{How to create your first bash script and execute it.}
+Let's create a simple script in bash that outputs Hello World.
+
+Create a file named:
+hello_world.sh
+touch hello_world.sh
+
+Find the path to your bash shell.
+which bash
+
+Write the command.
+We will echo "hello world" to the console.
+
+Our script will look something like this:
+
+#! usr/bin/bash
+echo "Hello World"
+
+Edit the file: hello_world.sh using a text editor of your choice and add the above lines in it.
+
+Provide execution rights to your user.
+Modify the file permissions and allow execution of the script by using the command below:
+
+chmod u+x hello_world.sh
+chmod modifies the existing rights of a file for a particular user. We are adding +x to user u.
+
+Run the script.
+You can run the script in the following ways:
+
+./hello_world.sh
+
+bash hello_world.sh.
+\end{frame}
+\begin{frame}{The basic syntax of shell scripting.}
+Just like any other programming language, bash scripting follows a set of rules to create programs understandable by the computer. In this section, we will study the syntax of bash scripting.
+
+How to define variables:
+We can define a variable by using the syntax variable_name=value. 
+
+To get the value of the variable, add s before the variable.
+
+Tux is also the name of the Linux mascot, the penguin.
+\end{frame}
+
+
 \end{document}
